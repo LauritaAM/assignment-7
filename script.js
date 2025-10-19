@@ -20,7 +20,6 @@ for (let i = 0; i < favoriteFoods.length; i++) {
 }
 
 
-
 // 4a. Create a function printFoodRecommendation(foodName) that prints out the following for the foodName provided
     // "Have you ever tried ____?"
     // "I always recommend ____ to friends."
@@ -68,6 +67,20 @@ let shortFoodNames = friendFavorites.filter(food => food.length <= 6);
 // 9. Print both arrays and compare:
 // "There are more long-named foods." OR "There are more short-named foods."
 
+console.log("Long names:", longFoodNames);
+console.log("Short names:", shortFoodNames);
+
+if (longFoodNames.length > shortFoodNames.length) {
+  console.log("There are more long-named foods.");
+} else if (shortFoodNames.length > longFoodNames.length) {
+  console.log("There are more short-named foods.");
+} else {
+  console.log("They are equal in number.");
+}
+
 
 // 10. STRETCH: Find the longest food name and print:
 // "The longest food name in the list is ______ with ___ characters."
+
+let longestFood = friendFavorites.reduce((a, b) => (a.length > b.length ? a : b));
+console.log(`The longest food name in the list is ${longestFood} with ${longestFood.length} characters.`);
